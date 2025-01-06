@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
 import { useChat } from 'ai/react';
 
-export default function Chat() {
+const ChatPage = () => {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     maxSteps: 5,
   });
@@ -31,3 +31,5 @@ export default function Chat() {
     </div>
   );
 }
+
+export default ChatPage

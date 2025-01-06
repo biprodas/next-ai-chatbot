@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { CiMenuKebab } from "react-icons/ci";
-import Container from "./container";
-import NavLink from "./nav-link";
+import Container from "~/components/container";
 
 import { ModeToggle } from "~/components/mode-toggle";
+import NavLink from "~/components/nav-link";
 import {
   DropdownMenu,
   DropdownMenuContent,
