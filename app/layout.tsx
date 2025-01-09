@@ -3,10 +3,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "~/components/theme-provider";
 import { geistMono, geistSans } from "~/font";
+import { siteConfig } from "~/config/site";
 
 export const metadata: Metadata = {
-  title: "Next AI Chatbot",
-  description: "Playground for various kinds and models of chatbot",
+  title: siteConfig.title,
+  description: siteConfig.description,
 };
 
 export default function RootLayout({
