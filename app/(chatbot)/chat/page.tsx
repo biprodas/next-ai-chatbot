@@ -3,7 +3,8 @@
 import { useChat } from 'ai/react';
 
 const ChatPage = () => {
-  const { messages, input, handleInputChange, handleSubmit } = useChat({
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
+    api: `/api/chat/completion`,
     maxSteps: 5,
   });
   
@@ -20,9 +21,11 @@ const ChatPage = () => {
         </div>
       ))}
 
-      <form onSubmit={handleSubmit}>
+
+      <form onSubmit={handleSubmit} className='fixed bottom-0 w-full max-w-md '>
+        {error && <div className="text-red-500">{error.message}</div>}
         <input
-          className="fixed bottom-0 w-full max-w-md p-2 mb-8 border border-gray-300 rounded shadow-xl"
+          className="w-full p-2 mb-8 border border-gray-300 rounded shadow-xl"
           value={input}
           placeholder="Say something..."
           onChange={handleInputChange}

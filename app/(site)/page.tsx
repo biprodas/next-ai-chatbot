@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "~/components/container";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent } from "~/components/ui/card";
@@ -7,13 +8,15 @@ export default function Home() {
     <Container>
       <div className="flex flex-col items-center justify-between px-6 mt-12">
         <div className="text-center max-w-3xl mb-12">
-          <h1 className="text-5xl font-bold tracking-tight mb-4 text-gray-800 dark:text-gray-200">
+          <h1 className="text-5xl font-bold tracking-tight mb-4">
             \ Meet Your Multimodal AI Chatbot
           </h1>
           <p className="text-lg text-muted-foreground mb-6">
             Chat, see, hear, and explore smarter with our AI that understands text, images, and voice — all in one seamless experience.
           </p>
-          <Button className="text-lg px-6 py-4">Try It Now</Button>
+          <Button size="lg" asChild>
+            <Link href="/chat">Try It Now</Link>
+          </Button>
         </div>
 
         <section className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl">

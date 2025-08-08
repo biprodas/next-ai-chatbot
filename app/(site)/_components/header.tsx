@@ -34,13 +34,13 @@ export const Header = () => {
               <DropdownMenuItem>Chat: Custom</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu> */}
-          <Button size="sm" variant="outline" asChild>
+          <Button size="md" variant="outline" asChild>
             <Link href="/login">Login</Link>
           </Button>
-          <Button size="sm" asChild>
+          <Button size="md" asChild>
             <Link href="/signup">Signup</Link>
           </Button>
-          <ModeToggle />
+          {/* <ModeToggle /> */}
         </nav>
       </Container>
     </header>
