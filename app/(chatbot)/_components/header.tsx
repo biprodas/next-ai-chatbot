@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { CiMenuKebab } from "react-icons/ci";
 
-import Container from "~/components/container";
+import { ContainerDashboard as Container } from "~/components/container";
 import { ModeToggle } from "~/components/mode-toggle";
 import {
   DropdownMenu,

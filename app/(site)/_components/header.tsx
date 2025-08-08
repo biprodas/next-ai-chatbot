@@ -1,12 +1,7 @@
-"use client";
-
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { CiMenuKebab } from "react-icons/ci";
-import Container from "~/components/container";
-
+import { Container } from "~/components/container";
 import { ModeToggle } from "~/components/mode-toggle";
-import NavLink from "~/components/nav-link";
+import { Button } from "~/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,20 +9,18 @@ import {
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
 
-const Header = () => {
-  const router = useRouter();
-
+export const Header = () => {
   return (
-    <header className="sticky top-0 w-full h-14 border-b z-30 backdrop-blur-2xl transition-all duration-100">
+    <header className="sticky top-0 w-full h-16 border-b z-30 backdrop-blur-2xl transition-all duration-100">
       <Container className="h-full flex justify-between items-center">
-        <Link href="/">
-          <strong>Next-AI-ChatBot</strong>
+        <Link href="/" className="text-xl font-bold text-stone-900 dark:text-stone-100">
+          Next-AI-ChatBot
         </Link>
         <nav className="flex items-center space-x-3">
-          <NavLink href="/chat">
-            <small>Playground</small>
-          </NavLink>
-          <DropdownMenu>
+          <Button variant="link" asChild>
+            <Link href="/chat">Playground</Link>
+          </Button>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger>
               <div className="p-1 border rounded-full hover:bg-stone-50">
                 <CiMenuKebab size={16} />
@@ -40,12 +33,16 @@ const Header = () => {
               <DropdownMenuItem>Chat: Montelo</DropdownMenuItem>
               <DropdownMenuItem>Chat: Custom</DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
+          <Button size="sm" variant="outline" asChild>
+            <Link href="/login">Login</Link>
+          </Button>
+          <Button size="sm" asChild>
+            <Link href="/signup">Signup</Link>
+          </Button>
           <ModeToggle />
         </nav>
       </Container>
     </header>
   );
 };
-
-export default Header;

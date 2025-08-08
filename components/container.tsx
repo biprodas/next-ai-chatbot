@@ -5,7 +5,21 @@ interface ContainerProps {
   children: React.ReactNode;
 }
 
-const Container: React.FC<ContainerProps> = ({ className = "", children }) => {
+
+export const Container = ({ children, className = "" }: ContainerProps) => {
+  return (
+    <div 
+      className={cn(
+        "min-w-[320px] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", 
+        className
+      )}
+    >
+      {children}
+    </div>
+  )
+}
+
+export const ContainerDashboard = ({ className = "", children }: ContainerProps) => {
   return (
     <div
       className={cn(
@@ -18,4 +32,3 @@ const Container: React.FC<ContainerProps> = ({ className = "", children }) => {
   );
 };
 
-export default Container;
